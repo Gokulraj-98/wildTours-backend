@@ -23,7 +23,7 @@ router.post('/', auth, async (req, res) => {
     res.status(201).send(tour);
 });
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     const tour = await Tour.findByIdAndDelete(req.params.id);
     if (!tour) {
         return res.status(404).send('Tour not found');
