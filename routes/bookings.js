@@ -1,10 +1,10 @@
 const express = require('express');
 const Booking = require('../models/Booking');
-const auth = require('../middleware/auth');
+// const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-router.post("/charge-bill", auth, async (req, res) => {
+router.post("/charge-bill", async (req, res) => {
     const booking = new Booking(req.body);
     await booking.save();
     res.send("Bill saved successfully")
