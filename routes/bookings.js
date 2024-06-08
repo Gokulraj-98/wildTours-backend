@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/charge-bill", async (req, res) => {
     const booking = new Booking(req.body);
     await booking.save();
-    res.send("Bill saved successfully")
+    // res.send("Bill saved successfully")
     res.status(201).send(booking);
 });
 
