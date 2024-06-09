@@ -38,4 +38,5 @@ router.get('/users/:userId/cart', async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Error fetching cart items" });
     }
+}
 module.exports = router;
