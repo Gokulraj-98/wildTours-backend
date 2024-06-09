@@ -31,4 +31,11 @@ router.delete('/:id', async (req, res) => {
     res.send('Tour deleted');
 });
 
+router.get('/users/:userId/cart', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId).populate('cartItems');
+        res.json({ cartItems: user.cartItems });
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching cart items" });
+    }
 module.exports = router;
